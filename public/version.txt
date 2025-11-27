@@ -1,0 +1,4 @@
+Version 2.0 - OTP Verification REMOVED
+Direct signup to dashboard enabled
+Enhanced password validation active
+Deployed: 2025-01-27

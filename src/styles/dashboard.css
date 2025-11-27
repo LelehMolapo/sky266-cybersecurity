@@ -1,0 +1,178 @@
+/* src/styles/dashboard-overview.css
+   Sky266 — Dashboard Overview (sky blue, black, white)
+*/
+
+:root{
+  --sky: #0ea5e9;
+  --sky-dark: #0284c7;
+  --bg: #0b0f12;
+  --card: #0f1720;
+  --muted: #9ca3af;
+  --white: #ffffff;
+}
+
+.dashboard-container{
+  padding: 1.5rem;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #05060a 0%, #050611 60%);
+  color: var(--white);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Welcome hero */
+.hero {
+  background: linear-gradient(90deg, rgba(2,6,23,0.65) 0%, rgba(2,6,23,0.2) 100%), linear-gradient(90deg, var(--sky), var(--sky-dark));
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.4);
+  border: 1px solid rgba(14,165,233,0.06);
+}
+
+.hero h2 { margin: 0; color: #fff; font-size: 1.15rem; font-weight: 700; }
+.hero p { margin: 0.25rem 0 0; color: rgba(255,255,255,0.85); }
+.hero .badge {
+  background: #fff;
+  color: var(--sky);
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.25);
+}
+
+/* stats grid */
+.stats-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0,1fr));
+  margin-top: 1rem;
+}
+
+/* responsive: 2 columns at medium, 4 at large */
+@media (min-width: 640px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* stat card */
+.stat-card {
+  background: var(--card);
+  border: 1px solid rgba(14,165,233,0.06);
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.22s ease, box-shadow 0.22s;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(2,6,23,0.45);
+}
+
+/* stat icon panel */
+.stat-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+}
+
+/* text inside stat */
+.stat-title { color: var(--muted); font-size: 0.88rem; margin: 0 0 0.25rem 0; }
+.stat-value { color: #fff; font-weight: 700; font-size: 1.4rem; margin: 0; }
+
+/* main content grid */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .main-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* section card */
+.section-card {
+  background: var(--card);
+  border-radius: 10px;
+  border: 1px solid rgba(14,165,233,0.06);
+  padding: 1rem;
+}
+
+/* progress bar wrapper */
+.progress-row { display:flex; flex-direction: column; gap: 0.6rem; }
+
+/* progress track (simple) */
+.progress-track {
+  height: 10px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--sky), var(--sky-dark));
+  width: 0%;
+  transition: width .6s ease;
+}
+
+/* action button */
+.cta {
+  margin-top: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(90deg, var(--sky), var(--sky-dark));
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.25);
+}
+
+/* recent activity list items */
+.activity-item {
+  display:flex;
+  gap: 0.75rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.activity-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+/* upcoming training grid */
+.upcoming-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .upcoming-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* security tip card */
+.tip-card {
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid rgba(14,165,233,0.06);
+  background: linear-gradient(180deg, rgba(14,165,233,0.02), rgba(14,165,233,0.01));
+}
+
+/* small muted text */
+.muted { color: var(--muted); font-size: 0.9rem; }
+
+/* responsive spacing */
+@media (max-width: 640px) {
+  .hero { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Sky266-Cybersecurity</string>
+    <string name="title_activity_main">Sky266-Cybersecurity</string>
+    <string name="package_name">com.sky266.app</string>
+    <string name="custom_url_scheme">com.sky266.app</string>
+</resources>
